@@ -1,0 +1,91 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="email">Email</label>
+            <input formControlName="email" type="text" class="form-control" [ngClass]="profileForm.get('email').invalid ? 'is-invalid' : 'is-valid'">
+            <div *ngIf="!profileForm.get('email').valid && profileForm.get('email').touched" class="alert alert-danger">
+                Email required
+            </div>            
+        </div>        
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="first_name">First Name</label>
+            <input formControlName="first_name" type="text" class="form-control">
+            <div *ngIf="!profileForm.get('first_name').valid && profileForm.get('first_name').touched" class="alert alert-danger">
+                First name required
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="last_name">Last Name</label>
+            <input formControlName="last_name" type="text" class="form-control">
+            <div *ngIf="!profileForm.get('last_name').valid && profileForm.get('last_name').touched" class="alert alert-danger">
+                Last name required
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="alias">Alias</label>
+            <input formControlName="alias" type="text" class="form-control">
+            <div *ngIf="!profileForm.get('alias').valid && profileForm.get('alias').touched" class="alert alert-danger">
+                Alias required
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="job_title">Job Title</label>
+            <input formControlName="job_title" type="text" class="form-control">
+            <div *ngIf="!profileForm.get('job_title').valid && profileForm.get('job_title').touched" class="alert alert-danger">
+                Job Title required
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="mobile_number">Mobile number</label>
+            <input formControlName="mobile_number" type="text" class="form-control">
+            <div *ngIf="!profileForm.get('mobile_number').valid && profileForm.get('mobile_number').touched" class="alert alert-danger">
+                Mobile number required
+            </div>
+        </div>        
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="password">Password</label>
+            <input formControlName="password" type="password" class="form-control">
+            <!-- <div *ngIf="!profileForm.get('password').valid && profileForm.get('password').touched" class="alert alert-danger">
+                Password required
+            </div> -->
+        </div>        
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="confirm_password">Confirm Password</label>
+            <input formControlName="confirm_password" type="password" class="form-control">
+            <!-- <div *ngIf="!profileForm.get('confirm_password').valid && profileForm.get('confirm_password').touched" class="alert alert-danger">
+                Confirm Password required
+            </div> -->
+        </div>        
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Submit</button>
+            &nbsp;
+            <button (click)="onLogout()" class="btn btn-info text-right">Logout</button>
+        </div>
+    </div>
+</form>
